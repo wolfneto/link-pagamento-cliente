@@ -958,6 +958,10 @@ import { mapState, mapMutations, mapActions } from "vuex";
 import QrcodeVue from "qrcode.vue";
 import io from "socket.io-client";
 // import CryptoJS from "crypto-js";
+
+const socketBaseUrl = process.env.VUE_APP_SOCKET_URL || "https://edster.com.br";
+const socketPath = process.env.VUE_APP_SOCKET_PATH || "/solident/pagamento/socket.io/";
+
 export default {
   components: {
     QrcodeVue,
@@ -966,8 +970,8 @@ export default {
     codigo: [String],
   },
   data: () => ({
-    socket: io("https://edster.com.br", {
-      path: "/solident/pagamento/socket.io/",
+    socket: io(socketBaseUrl, {
+      path: socketPath,
       secure: true,
       withCredentials: true,
       reconnection: true,
