@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const apiBaseUrl = process.env.VUE_APP_PAGAMENTO_API_URL || "https://solident.com.br/node"
+const apiBaseUrl = process.env.VUE_APP_PAGAMENTO_API_URL
 
 export default axios.create({
     baseURL: apiBaseUrl,
