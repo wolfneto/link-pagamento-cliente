@@ -56,8 +56,11 @@ jobs:
               podman rm -f link-pagamento-cliente
             fi
 
+            podman network exists solident-network || podman network create solident-network
+
             podman run -d \
               --name link-pagamento-cliente \
               --restart=always \
+              --network solident-network \
               -p 8089:80 \
               ghcr.io/${{ github.repository_owner }}/link-pagamento-cliente:latest
