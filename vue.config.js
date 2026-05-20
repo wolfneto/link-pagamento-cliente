@@ -7,7 +7,7 @@ module.exports = {
         disableHostCheck: true
     },
 
-    publicPath: "/solident/cliente/",
+    publicPath: "/link/",
 
     transpileDependencies: [
         'vuetify'
