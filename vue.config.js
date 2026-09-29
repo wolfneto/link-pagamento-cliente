@@ -7,7 +7,7 @@ module.exports = {
         disableHostCheck: true
     },
 
-    publicPath: "/link/",
+    publicPath: process.env.VUE_APP_PUBLIC_PATH || "/",
 
     transpileDependencies: [
         'vuetify'
