@@ -19,6 +19,6 @@ const routes = baseRoutes.concat(Inicio, Pagamento);
 
 export const router = new Router({
     mode: 'history',
-    base: '/solident/cliente/',
+    base: process.env.BASE_URL,
     routes
 });
